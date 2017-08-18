@@ -1,0 +1,7 @@
+<div style="width: 100%">
+  <div class="gantt_container" (window:resize)="onResize($event)">
+    <app-gantt-header [name]="_project.name" [startDate]="_project.startDate"></app-gantt-header>
+    <app-gantt-activity [project]="_project" [options]="_options" (onGridRowClick)="gridRowClicked($event)"></app-gantt-activity>
+    <app-gantt-footer [project]="_project"></app-gantt-footer>
+  </div>
+</div>

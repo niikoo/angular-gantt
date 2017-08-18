@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+.gantt_activity {
+  /*overflow-x: hidden;*/
+  height: 250px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.gantt_activity_area {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-user-select: none;
+}
+
+.gantt_vertical_scroll {
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  right: 0;
+  display: block;
+  height: 283px;
+  width: 18px;
+  top: 70px;
+}
+
+.grid {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: inline-block;
+  vertical-align: top;
+  border-right: 1px solid #cecece;
+}
+
+.grid_scale {
+  color: #6b6b6b;
+  font-size: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: whitesmoke;
+}
+
+.grid_head_cell {
+  /*color: #a6a6a6;*/
+  border-top: none !important;
+  border-right: none !important;
+  line-height: inherit;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  border-right: 1px solid #cecece;
+  /*text-align: center;*/
+  position: relative;
+  cursor: default;
+  height: 100%;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  overflow: hidden;
+}
+
+.grid_data {
+  overflow: hidden;
+}
+
+.grid_row {
+  box-sizing: border-box;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fff;
+  position: relative;
+  -webkit-user-select: none;
+}
+
+.grid_row:hover {
+  background-color: #eeeeee;
+}
+
+.grid_cell {
+  border-right: none;
+  color: #454545;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 6px;
+  padding-right: 6px;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.actions_bar {
+  /*border-top: 1px solid #cecece;*/
+  border-bottom: 1px solid #e0e0e0;
+  clear: both;
+  /*margin-top: 90px;*/
+  height: 28px;
+  background: whitesmoke;
+  color: #494949;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  padding-left: 15px;
+  line-height: 25px;
+}
+
+.gantt_tree_content {
+  padding-left: 15px;
+}
