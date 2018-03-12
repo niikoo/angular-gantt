@@ -10,7 +10,7 @@ import {GanttActivityBarsComponent} from './gantt-activity-bars/gantt-activity-b
 import {GanttTimeScaleComponent} from './gantt-time-scale/gantt-time-scale.component';
 import { GanttService } from './gantt.service';
 
-export * from './gantt/gantt.component';;
+export * from './gantt/gantt.component';
 export * from './group-by.pipe';
 export * from './gantt.service';
 
@@ -27,20 +27,17 @@ export * from './gantt.service';
     GanttActivityBackgroundComponent,
     GanttActivityBarsComponent,
     GanttTimeScaleComponent,
-    GroupByPipe,
-    GanttService
+    GroupByPipe
   ],
   exports: [
     GanttComponent,
     GanttActivityComponent,
-    GanttComponent,
     GanttHeaderComponent,
     GanttFooterComponent,
     GanttActivityBackgroundComponent,
     GanttActivityBarsComponent,
     GanttTimeScaleComponent,
-    GroupByPipe,
-    GanttService
+    GroupByPipe
   ]
 })
 export class GanttModule {

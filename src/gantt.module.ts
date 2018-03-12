@@ -9,6 +9,7 @@ import {GanttActivityBackgroundComponent} from './gantt-activity-background/gant
 import {GanttActivityBarsComponent} from './gantt-activity-bars/gantt-activity-bars.component';
 import {GanttTimeScaleComponent} from './gantt-time-scale/gantt-time-scale.component';
 import {CommonModule} from '@angular/common';
+import { GanttService } from 'index';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import {CommonModule} from '@angular/common';
   imports: [
     CommonModule,
   ],
-  providers: [],
+  providers: [
+    GanttService
+  ],
   exports: [GanttComponent],
   bootstrap: [GanttComponent]
 })

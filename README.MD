@@ -1,22 +1,8 @@
-# angular4-gantt
+# angular-gantt
 
-## Installation
 
-To install this library, run:
+## How to include angular-gantt
 
-```bash
-$ npm install angular4-gantt --save
-```
-
-## Consuming your library
-
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
-$ npm install angular4-gantt
-```
-
-and then from your Angular `AppModule`:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +11,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'angular4-gantt';
+import { GanttModule } from 'angular-gantt';
 
 @NgModule({
   declarations: [
@@ -33,9 +19,8 @@ import { SampleModule } from 'angular4-gantt';
   ],
   imports: [
     BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
+    // Import the Gantt module
+    GanttModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -43,14 +28,12 @@ import { SampleModule } from 'angular4-gantt';
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
-
 ```xml
-<!-- You can now use your library component in app.component.html -->
+<!-- You can now use the gantt-component in for example app.component.html -->
 <h1>
   {{title}}
 </h1>
-<sampleComponent></sampleComponent>
+<gantt-component></gantt-component>
 ```
 
 ## Development
@@ -69,4 +52,5 @@ $ npm run lint
 
 ## License
 
+MIT © [niikoo](mailto:post@niikoo.net)
 MIT © [joerg.wiesmann](mailto:joerg.wiesmann@gmail.com)
