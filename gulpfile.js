@@ -19,13 +19,13 @@ const distFolder = path.join(rootFolder, 'dist');
  */
 gulp.task('clean:dist', function () {
 
-  // Delete contents but not dist folder to avoid broken npm links
-  // when dist directory is removed while npm link references it.
+  // Delete contents but not dist folder to avoid broken npm/yarn links
+  // when dist directory is removed while npm/yarn link references it.
   return deleteFolders([distFolder + '/**', '!' + distFolder]);
 });
 
 /**
- * 2. Clone the /src folder into /.tmp. If an npm link inside /src has been made,
+ * 2. Clone the /src folder into /.tmp. If an npm/yarn link inside /src has been made,
  *    then it's likely that a node_modules folder exists. Ignore this folder
  *    when copying to /.tmp.
  */
@@ -126,7 +126,7 @@ gulp.task('rollup:umd', function () {
       // The name to use for the module for UMD/IIFE bundles
       // (required for bundles with exports)
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
-      moduleName: 'angular4-gantt',
+      moduleName: 'angular-gantt',
 
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals
       globals: {
@@ -134,7 +134,7 @@ gulp.task('rollup:umd', function () {
       }
 
     }))
-    .pipe(rename('angular4-gantt.umd.js'))
+    .pipe(rename('angular-gantt.umd.js'))
     .pipe(gulp.dest(distFolder));
 });
 
@@ -175,7 +175,7 @@ gulp.task('clean:tmp', function () {
  * 11. Delete /build folder
  */
 gulp.task('clean:build', function () {
-  return deleteFolders([buildFolder]);
+  // return deleteFolders([buildFolder]); // Crashes often on win10
 });
 
 gulp.task('compile', function () {
