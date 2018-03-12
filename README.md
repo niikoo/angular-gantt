@@ -1,7 +1,7 @@
 # angular-gantt
 
 
-## Consuming your library
+## How to include angular-gantt
 
 
 ```typescript
@@ -29,11 +29,11 @@ export class AppModule { }
 ```
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
+<!-- You can now use the gantt-component in for example app.component.html -->
 <h1>
   {{title}}
 </h1>
-<gantt></gantt>
+<gantt-component></gantt-component>
 ```
 
 ## Development

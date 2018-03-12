@@ -3,7 +3,7 @@ import {IGanttOptions, Project} from '../interfaces';
 import {GanttService} from '../gantt.service';
 
 @Component({
-  selector: 'app-gantt',
+  selector: 'gantt-component',
   templateUrl: './gantt.component.html',
   styleUrls: ['./gantt.component.css']
 })

@@ -11,7 +11,10 @@
       "dom"
     ],
     "skipLibCheck": true,
-    "types": [],
+    "types": [
+      "jasmine",
+      "node"      
+    ],
     "typeRoots": [
       "/node_modules/@types"
     ]
