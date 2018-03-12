@@ -31,3 +31,5 @@ Desktop.ini
 # Build files
 dist/*
 yarn-error.log
+build/
+build/**
