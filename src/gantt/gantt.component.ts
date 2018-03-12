@@ -32,7 +32,7 @@ export class GanttComponent implements OnInit {
     if (project) {
       this._project = project;
     } else {
-      this.setDefaultProject();
+      // this.setDefaultProject();
     }
   }
 
@@ -45,7 +45,7 @@ export class GanttComponent implements OnInit {
     if (options.scale) {
       this._options = options;
     } else {
-      this.setDefaultOptions();
+      // this.setDefaultOptions();
     }
   }
 
