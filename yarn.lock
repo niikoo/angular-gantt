@@ -3303,7 +3303,7 @@ jasmine-core@~2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.8.0.tgz#bcc979ae1f9fd05701e45e52e65d3a5d63f1a24e"
 
-jasmine-core@~3.1.2:
+jasmine-core@~3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-3.1.0.tgz#a4785e135d5df65024dfc9224953df585bd2766c"
 
@@ -4074,6 +4074,10 @@ negotiator@0.6.1:
 netmask@~1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"
+
+ngc@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ngc/-/ngc-1.0.0.tgz#844c2bff914fac9e02597b608d3430c72cfd6209"
 
 node-gyp@^3.3.1:
   version "3.6.2"
