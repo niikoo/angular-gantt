@@ -3,7 +3,7 @@ import {Zooming} from '../interfaces';
 import {GanttService} from '../gantt.service';
 
 @Component({
-  selector: 'app-gantt-activity-background',
+  selector: 'gantt-activity-background',
   templateUrl: './gantt-activity-background.component.html',
   styleUrls: ['./gantt-activity-background.component.css']
 })

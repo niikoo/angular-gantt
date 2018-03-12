@@ -3,7 +3,7 @@ import {Zooming} from '../interfaces';
 import {GanttService} from '../gantt.service';
 
 @Component({
-  selector: 'app-gantt-activity-bars',
+  selector: 'gantt-activity-bars',
   templateUrl: './gantt-activity-bars.component.html',
   styleUrls: ['./gantt-activity-bars.component.css']
 })

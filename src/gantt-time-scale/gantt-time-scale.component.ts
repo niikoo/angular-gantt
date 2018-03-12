@@ -3,7 +3,7 @@ import {Zooming} from '../interfaces';
 import {GanttService} from '../gantt.service';
 
 @Component({
-  selector: 'app-gantt-time-scale',
+  selector: 'gantt-time-scale',
   templateUrl: './gantt-time-scale.component.html',
   styleUrls: ['./gantt-time-scale.component.css']
 })

@@ -40,10 +40,10 @@
     </div>
   </div>
 </div><div class="gantt_activity" (window:resize)="onResize($event)" [ngStyle]="{ 'height': ganttActivityHeight, 'width': ganttActivityWidth - 18 + 'px'}">
-  <app-gantt-time-scale [zoom]="zoom" [zoomLevel]="zoomLevel" [timeScale]="ganttService.TIME_SCALE" [dimensions]="dimensions"></app-gantt-time-scale>
+  <gantt-time-scale [zoom]="zoom" [zoomLevel]="zoomLevel" [timeScale]="ganttService.TIME_SCALE" [dimensions]="dimensions"></gantt-time-scale>
   <div class="gantt_activity_area" #ganttActivityArea [ngStyle]="{ 'height': ganttService.calculateGanttHeight(), 'width': containerWidth + 'px'}">
-    <app-gantt-activity-background [zoom]="zoom" [zoomLevel]="zoomLevel" [timeScale]="ganttService.TIME_SCALE" [tasks]="ganttService.TASK_CACHE"></app-gantt-activity-background>
-    <app-gantt-activity-bars [zoom]="zoom" [zoomLevel]="zoomLevel" [timeScale]="ganttService.TIME_SCALE" [dimensions]="dimensions" [tasks]="ganttService.TASK_CACHE"></app-gantt-activity-bars>
+    <gantt-activity-background [zoom]="zoom" [zoomLevel]="zoomLevel" [timeScale]="ganttService.TIME_SCALE" [tasks]="ganttService.TASK_CACHE"></gantt-activity-background>
+    <gantt-activity-bars [zoom]="zoom" [zoomLevel]="zoomLevel" [timeScale]="ganttService.TIME_SCALE" [dimensions]="dimensions" [tasks]="ganttService.TASK_CACHE"></gantt-activity-bars>
   </div>
 </div>
 <div class="gantt_vertical_scroll" #verticalScroll (scroll)="onVerticalScroll(verticalScroll, ganttGrid, ganttActivityArea)" [ngStyle]="{'display': activityActions.expanded === true ? 'none' : 'block' }">

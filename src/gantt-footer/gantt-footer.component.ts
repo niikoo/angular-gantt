@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-gantt-footer',
+  selector: 'gantt-footer',
   templateUrl: './gantt-footer.component.html',
   styleUrls: ['./gantt-footer.component.css']
 })

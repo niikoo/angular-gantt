@@ -8,7 +8,12 @@ import {GanttService} from '../gantt.service';
   styleUrls: ['./gantt.component.css']
 })
 export class GanttComponent implements OnInit {
-  _project: Project;
+  _project: Project = {
+    id: '',
+    name: '',
+    startDate: null,
+    tasks: []
+  };
   _options: IGanttOptions;
 
   // TODO(dale): this may be causing an issue in the tree builder?
@@ -63,8 +68,8 @@ export class GanttComponent implements OnInit {
 
   setDefaultProject() {
     this._project = {
-      id: '',
-      name: '',
+      id: '1',
+      name: 'Sample',
       startDate: null,
       tasks: []
     };

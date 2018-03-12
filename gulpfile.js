@@ -6,8 +6,10 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   del = require('del'),
   runSequence = require('run-sequence'),
-  inlineResources = require('./tools/gulp/inline-resources');
-
+  inlineResources = require('./tools/gulp/inline-resources'),
+  cleanCompiledTypeScript = require('gulp-clean-compiled-typescript');
+ 
+  
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'src');
 const tmpFolder = path.join(rootFolder, '.tmp');
@@ -178,6 +180,11 @@ gulp.task('clean:build', function () {
   // return deleteFolders([buildFolder]); // Crashes often on win10
 });
 
+gulp.task('clean:compiled', function () {
+  return gulp.src('./src/**/*.ts')
+    .pipe(cleanCompiledTypeScript());
+});
+
 gulp.task('compile', function () {
   runSequence(
     'clean:dist',
@@ -191,6 +198,7 @@ gulp.task('compile', function () {
     'copy:readme',
     'clean:build',
     'clean:tmp',
+    'clean:compiled',
     function (err) {
       if (err) {
         console.log('ERROR:', err.message);

@@ -4,7 +4,7 @@ import {Zooming} from '../interfaces';
 
 
 @Component({
-  selector: 'app-gantt-activity',
+  selector: 'gantt-activity',
   templateUrl: './gantt-activity.component.html',
   styleUrls: ['./gantt-activity.component.css'],
   changeDetection: ChangeDetectionStrategy.Default
