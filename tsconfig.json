@@ -2,13 +2,18 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "experimentalDecorators": true,
+    "declaration": true,
     "moduleResolution": "node",
     "rootDir": "./src",
+    "module": "es2015",
     "lib": [
-      "es2015",
+      "es7",
       "dom"
     ],
     "skipLibCheck": true,
-    "types": []
+    "types": [],
+    "typeRoots": [
+      "/node_modules/@types"
+    ]
   }
 }
