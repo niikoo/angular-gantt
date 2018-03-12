@@ -1,28 +1,29 @@
 {
-  "name": "angular4-gantt",
-  "version": "0.1.0",
+  "name": "angular-gantt",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jwiesmann/angular4-gantt"
+    "url": "https://github.com/niikoo/angular-gantt"
   },
   "author": {
-    "name": "joerg.wiesmann",
-    "email": "joerg.wiesmann@gmail.com"
+    "name": "niikoo",
+    "email": "post@niikoo.net"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "gantt"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jwiesmann/angular4-gantt/issues"
+    "url": "https://github.com/niikoo/angular-gantt/issues"
   },
-  "main": "angular4-gantt.umd.js",
-  "module": "angular4-gantt.js",
-  "jsnext:main": "angular4-gantt.js",
-  "typings": "angular4-gantt.d.ts",
+  "main": "angular-gantt.umd.js",
+  "module": "angular-gantt.js",
+  "jsnext:main": "angular-gantt.js",
+  "typings": "angular-gantt.d.ts",
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "@angular/core": "~5.2.0",
+    "rxjs": "^5.5.0",
+    "zone.js": "^0.8.20"
   }
 }

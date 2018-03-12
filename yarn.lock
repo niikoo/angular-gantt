@@ -4075,10 +4075,6 @@ netmask@~1.0.4:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"
 
-ngc@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ngc/-/ngc-1.0.0.tgz#844c2bff914fac9e02597b608d3430c72cfd6209"
-
 node-gyp@^3.3.1:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.6.2.tgz#9bfbe54562286284838e750eac05295853fa1c60"

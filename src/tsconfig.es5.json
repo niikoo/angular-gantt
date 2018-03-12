@@ -12,17 +12,20 @@
     "rootDir": ".",
     "lib": [
       "es2015",
+      "es7",
       "dom"
     ],
     "skipLibCheck": true,
-    "types": []
+    "types": [
+      "node"
+    ]
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "angular4-gantt.js",
-    "flatModuleId": "angular4-gantt"
+    "flatModuleOutFile": "angular-gantt.js",
+    "flatModuleId": "angular-gantt"
   },
   "files": [
     "./index.ts"
