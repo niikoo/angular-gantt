@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, DoCheck, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GanttService} from '../gantt.service';
-import {Zooming} from '../interfaces';
+import {Zooming, IGanttOptions} from '../interfaces';
 
 
 @Component({
@@ -11,7 +11,7 @@ import {Zooming} from '../interfaces';
 })
 export class GanttActivityComponent implements OnInit, DoCheck {
   @Input() project: any;
-  @Input() options: any;
+  @Input() options: IGanttOptions;
   @Output() onGridRowClick: EventEmitter<any> = new EventEmitter<any>();
 
   upTriangle = '&#x25b2;'; // BLACK UP-POINTING TRIANGLE

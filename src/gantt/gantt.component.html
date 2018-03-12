@@ -1,7 +1,7 @@
 <div class="gantt-container-holder">
   <div class="gantt-container" (window:resize)="onResize($event)">
     <gantt-header [name]="_project.name" [startDate]="_project.startDate"></gantt-header>
-    <gantt-activity [project]="_project" [options]="_options" (onGridRowClick)="gridRowClicked($event)"></gantt-activity>
+    <gantt-activity [project]="_project" [options]="options" (onGridRowClick)="gridRowClicked($event)"></gantt-activity>
     <gantt-footer [project]="_project"></gantt-footer>
   </div>
 </div>

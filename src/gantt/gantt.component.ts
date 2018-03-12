@@ -40,14 +40,14 @@ export class GanttComponent implements OnInit {
     return this._project;
   }
 
-  @Input()
+  /*@Input()
   set options(options: any) {
     if (options.scale) {
       this._options = options;
     } else {
       // this.setDefaultOptions();
     }
-  }
+  }*/
 
   get options() {
     return this._options;
