@@ -7,8 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class GanttHeaderComponent implements OnInit {
 
-  @Input() name: any;
-  @Input() startDate: Date;
+  @Input() name: any = '';
+  @Input() startDate: Date = new Date();
 
   constructor() {
   }

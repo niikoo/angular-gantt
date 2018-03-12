@@ -1,4 +1,4 @@
-export interface Project {
+export interface GanttProject {
     id: string;
     name: string;
     startDate?: Date;

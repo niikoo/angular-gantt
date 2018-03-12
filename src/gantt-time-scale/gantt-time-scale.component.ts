@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Zooming} from '../interfaces';
 import {GanttService} from '../gantt.service';
+import { isNil } from 'lodash';
 
 @Component({
   selector: 'gantt-time-scale',
@@ -57,7 +58,9 @@ export class GanttTimeScaleComponent implements OnInit {
   }
 
   private getHours(): string[] {
-    return this.ganttService.getHours(this.timeScale.length);
+    if (!isNil(this.timeScale) && 'length' in this.timeScale) {
+      return this.ganttService.getHours(this.timeScale.length);
+    }
   }
 
 }

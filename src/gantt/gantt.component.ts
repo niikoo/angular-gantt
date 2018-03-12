@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {IGanttOptions, Project} from '../interfaces';
+import {IGanttOptions, GanttProject, Zooming} from '../interfaces';
 import {GanttService} from '../gantt.service';
 
 @Component({
@@ -8,13 +8,23 @@ import {GanttService} from '../gantt.service';
   styleUrls: ['./gantt.component.css']
 })
 export class GanttComponent implements OnInit {
-  _project: Project = {
+  
+  /**
+   * @see https://github.com/dalestone/angular2-gantt/tree/master/src/demo-app
+   */
+  _project: GanttProject = {
     id: '',
     name: '',
-    startDate: null,
+    startDate: new Date(),
     tasks: []
   };
-  _options: IGanttOptions;
+  _options: IGanttOptions = {
+        scale: {
+            start: new Date(2017, 0, 1),
+            end: new Date(2019, 1, 1)
+        },
+        zooming: Zooming[Zooming.days]
+    };
 
   // TODO(dale): this may be causing an issue in the tree builder?
   @Input()
@@ -70,7 +80,7 @@ export class GanttComponent implements OnInit {
     this._project = {
       id: '1',
       name: 'Sample',
-      startDate: null,
+      startDate: new Date(),
       tasks: []
     };
   }
