@@ -13,11 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jwiesmann/angular4-gantt"
+    "url": "https://github.com/niikoo/angular-gantt"
   },
   "author": {
-    "name": "joerg.wiesmann",
-    "email": "joerg.wiesmann@gmail.com"
+    "name": "@niikoo & @joerg.wiesmann"
   },
   "keywords": [
     "angular",
@@ -25,7 +24,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jwiesmann/angular4-gantt/issues"
+    "url": "https://github.com/niikoo/angular-gantt/issues"
   },
   "devDependencies": {
     "@angular/common": "^5.2.8",
