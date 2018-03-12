@@ -67,9 +67,9 @@ gulp.task('rollup:fesm', function () {
   // transform the files here.
     .pipe(rollup({
 
-      // Bundle's entry point
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#entry
-      entry: `${buildFolder}/index.js`,
+      // Bundle's input point
+      // See https://rollupjs.org/guide/en#core-functionality
+      input: `${buildFolder}/index.js`,
 
       // Allow mixing of hypothetical and actual files. "Actual" files can be files
       // accessed by Rollup or produced by plugins further down the chain.
@@ -78,15 +78,18 @@ gulp.task('rollup:fesm', function () {
       allowRealFiles: true,
 
       // A list of IDs of modules that should remain external to the bundle
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#external
+      // See https://rollupjs.org/guide/en#core-functionality
       external: [
         '@angular/core',
-        '@angular/common'
+        '@angular/common',
+        'lodash'
       ],
 
       // Format of generated bundle
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
-      format: 'es'
+      // See https://rollupjs.org/guide/en#core-functionality
+      output: {
+        format: 'es'
+      }
     }))
     .pipe(gulp.dest(distFolder));
 });
@@ -100,40 +103,57 @@ gulp.task('rollup:umd', function () {
   // transform the files here.
     .pipe(rollup({
 
-      // Bundle's entry point
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#entry
-      entry: `${buildFolder}/index.js`,
+      /**
+       * Bundle's entry point
+       * @see https://rollupjs.org/guide/en#core-functionality
+       **/
+      input: `${buildFolder}/index.js`,
 
-      // Allow mixing of hypothetical and actual files. "Actual" files can be files
-      // accessed by Rollup or produced by plugins further down the chain.
-      // This prevents errors like: 'path/file' does not exist in the hypothetical file system
-      // when subdirectories are used in the `src` directory.
+      /**
+       * Allow mixing of hypothetical and actual files. "Actual" files can be files
+       * accessed by Rollup or produced by plugins further down the chain.
+       * This prevents errors like: 'path/file' does not exist in the hypothetical file system
+       * when subdirectories are used in the `src` directory. 
+       **/
       allowRealFiles: true,
 
-      // A list of IDs of modules that should remain external to the bundle
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#external
+      /**
+       * A list of IDs of modules that should remain external to the bundle
+       * @see https://rollupjs.org/guide/en#core-functionality
+       **/
       external: [
         '@angular/core',
         '@angular/common'
       ],
 
-      // Format of generated bundle
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
+      /**
+       * Format of generated bundle
+       * @see https://rollupjs.org/guide/en#core-functionality
+       **/
       format: 'umd',
 
-      // Export mode to use
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#exports
+      /**
+       * Export mode to use
+       * @see https://rollupjs.org/guide/en#core-functionality
+       **/
       exports: 'named',
 
-      // The name to use for the module for UMD/IIFE bundles
-      // (required for bundles with exports)
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
+      /**
+       * The name to use for the module for UMD/IIFE bundles
+       * (required for bundles with exports)'
+       * @see https://rollupjs.org/guide/en#core-functionality
+       **/
       moduleName: 'angular-gantt',
 
-      // See https://github.com/rollup/rollup/wiki/JavaScript-API#globals
-      globals: {
-        typescript: 'ts'
+      /**
+       * @see https://rollupjs.org/guide/en#core-functionality
+       **/
+      output: {
+        globals: {
+          typescript: 'ts'
+        }
       }
+
 
     }))
     .pipe(rename('angular-gantt.umd.js'))

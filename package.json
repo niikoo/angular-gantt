@@ -61,12 +61,11 @@
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
     "typescript": "~2.6.2",
-    "zone.js": "^0.8.20"
+    "zone.js": "^0.8.20",
+    "gulp-clean-compiled-typescript": "^1.2.0",
+    "lodash": "^4.17.5"
   },
   "engines": {
     "node": ">=8.9.0"
-  },
-  "dependencies": {
-    "gulp-clean-compiled-typescript": "^1.2.0"
   }
 }
