@@ -32,7 +32,6 @@ Desktop.ini
 **/*.ngfactory.ts
 
 # Build files
-dist/*
 yarn-error.log
 build/
 build/**
