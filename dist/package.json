@@ -1,0 +1,30 @@
+{
+  "name": "ngx-gantt",
+  "version": "0.3.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/niikoo/angular-gantt"
+  },
+  "author": {
+    "name": "niikoo",
+    "email": "post@niikoo.net"
+  },
+  "keywords": [
+    "angular",
+    "gantt"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/niikoo/angular-gantt/issues"
+  },
+  "main": "angular-gantt.umd.js",
+  "module": "angular-gantt.js",
+  "jsnext:main": "angular-gantt.js",
+  "typings": "angular-gantt.d.ts",
+  "peerDependencies": {
+    "@angular/core": "~5.2.0",
+    "lodash": "~4.17.5",
+    "rxjs": "^5.5.0",
+    "zone.js": "^0.8.20"
+  }
+}
