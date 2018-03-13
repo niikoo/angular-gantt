@@ -47,4 +47,4 @@ export interface IDimensions {
     height: number;
 }
 
-export type Cell = any;
+export type Cell = Date;
