@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, DoCheck, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {GanttService} from '../gantt.service';
-import {Zooming, IGanttOptions} from '../interfaces';
-
+import {Zooming, IGanttOptions, GanttProject, TimeScale, IDimensions} from '../interfaces';
+import { isNil, isEqual, isObject } from 'lodash';
 
 @Component({
   selector: 'gantt-activity',
@@ -10,8 +10,22 @@ import {Zooming, IGanttOptions} from '../interfaces';
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class GanttActivityComponent implements OnInit, DoCheck {
-  @Input() project: any;
-  @Input() options: IGanttOptions;
+  @Input() project: GanttProject;
+  _options: IGanttOptions = {};
+  @Input()
+  get options(): IGanttOptions {
+    return this._options;
+  }
+  set options(newOptions: IGanttOptions) {
+    if (isNil(newOptions)) {
+      return;
+    }
+    if (isObject(newOptions) && !isEqual(newOptions, this._options)) {
+      this._options = newOptions;
+      console.log('Retriggering init to set new scaling sizes');
+      this.ngOnInit();
+    }
+  }
   @Output() onGridRowClick: EventEmitter<any> = new EventEmitter<any>();
 
   upTriangle = '&#x25b2;'; // BLACK UP-POINTING TRIANGLE
@@ -22,7 +36,7 @@ export class GanttActivityComponent implements OnInit, DoCheck {
     expandedIcon: this.downTriangle
   };
 
-  timeScale: any;
+  timeScale: TimeScale;
 
   start: Date;
   end: Date;
@@ -41,7 +55,7 @@ export class GanttActivityComponent implements OnInit, DoCheck {
     end: null
   };
 
-  dimensions = {
+  dimensions: IDimensions = {
     height: 0,
     width: 0
   };

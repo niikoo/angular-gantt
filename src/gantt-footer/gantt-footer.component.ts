@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { GanttProject } from '../interfaces';
 
 @Component({
   selector: 'gantt-footer',
@@ -7,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class GanttFooterComponent implements OnInit {
 
-  @Input() project: any;
+  @Input() project: GanttProject;
 
   constructor() {
   }

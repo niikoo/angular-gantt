@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Zooming} from '../interfaces';
+import {Component, Input, OnInit, EventEmitter} from '@angular/core';
+import {Zooming, TimeScale, Task, IDimensions} from '../interfaces';
 import {GanttService} from '../gantt.service';
 
 @Component({
@@ -9,16 +9,18 @@ import {GanttService} from '../gantt.service';
 })
 export class GanttActivityBarsComponent implements OnInit {
 
-  @Input() timeScale: any;
-  @Input() dimensions: any;
-  @Input() tasks: any;
-  @Input() zoom: any;
-  @Input() zoomLevel: any;
+  @Input() timeScale: TimeScale;
+  @Input() dimensions: IDimensions;
+  @Input() tasks: Task[];
+  @Input() zoom: EventEmitter<string>;
+  @Input() zoomLevel: string;
 
   private containerHeight = 0;
   private containerWidth = 0;
+  resizeable = '';
 
   constructor(public ganttService: GanttService) {
+    this.resizeable = (this.ganttService.barResizeable) ? 'resizeable' : '';
   }
 
   ngOnInit() {

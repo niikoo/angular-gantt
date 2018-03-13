@@ -1,6 +1,7 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {Zooming} from '../interfaces';
+import {Component, ElementRef, Input, OnInit, ViewChild, EventEmitter} from '@angular/core';
+import {Zooming, TimeScale, Task, Cell} from '../interfaces';
 import {GanttService} from '../gantt.service';
+import { isNil, isObject, isEqual } from 'lodash';
 
 @Component({
   selector: 'gantt-activity-background',
@@ -8,17 +9,32 @@ import {GanttService} from '../gantt.service';
   styleUrls: ['./gantt-activity-background.component.css']
 })
 export class GanttActivityBackgroundComponent implements OnInit {
+  private _tasks: Task[];
 
-  @Input() tasks: any;
-  @Input() timeScale: any;
-  @Input() zoom: any;
+  @Input()
+  get tasks(): Task[] {
+    return this._tasks;
+  }
+  set tasks(tasks: Task[]) {
+    if (!isNil(tasks) && isObject(tasks) && !isEqual(tasks, this._tasks)) {
+      this._tasks = tasks;
+      this.onChanges.emit();
+    }
+  }
+  @Input() timeScale: TimeScale;
+  @Input() zoom: EventEmitter<string>;
   @Input() zoomLevel: string;
 
   @ViewChild('bg') bg: ElementRef;
 
-  cells: any[] = [];
+  onChanges = new EventEmitter<void>();
+
+  cells: Cell[] = [];
 
   constructor(public ganttService: GanttService) {
+    this.onChanges.subscribe(
+      () => this.drawGrid()
+    )
   }
 
   ngOnInit() {
@@ -34,13 +50,13 @@ export class GanttActivityBackgroundComponent implements OnInit {
     return this.ganttService.isDayWeekend(date);
   }
 
-  private setRowStyle() {
+  private setRowStyle(): { height: string } {
     return {
       'height': this.ganttService.rowHeight + 'px'
     };
   }
 
-  private setCellStyle() {
+  private setCellStyle(): { width: string } {
     let width = this.ganttService.cellWidth;
 
     if (this.zoomLevel === Zooming[Zooming.hours]) {
@@ -56,7 +72,7 @@ export class GanttActivityBackgroundComponent implements OnInit {
     if (this.zoomLevel === Zooming[Zooming.hours]) {
       this.cells = [];
 
-      this.timeScale.forEach((date: any) => {
+      this.timeScale.forEach((date: Date) => {
         for (let i = 0; i <= 23; i++) {
           this.cells.push(date);
         }

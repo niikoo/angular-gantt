@@ -16,6 +16,7 @@ export class GanttService {
   public barLineHeight = 0;
   public barTop = 0;
   public barMoveable = false;
+  public barResizeable = false;
   public gridWidth = 560;
   private barStyles: IBarStyle[] = [
     {status: 'information', backgroundColor: 'rgb(18,195, 244)', border: '1px solid #2196F3', progressBackgroundColor: '#2196F3'},
@@ -36,6 +37,7 @@ export class GanttService {
     this.barLineHeight = _ganttConfig.barLineHeight;
     this.barTop = _ganttConfig.rowHeight;
     this.barMoveable = _ganttConfig.barMoveable;
+    this.barResizeable = _ganttConfig.barResizeable;
   }
 
   private calculateBarWidth(start: Date, end: Date, hours?: boolean): number {

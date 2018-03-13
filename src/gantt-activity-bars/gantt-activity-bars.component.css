@@ -59,10 +59,10 @@
   left: 0;
 }
 
-.gantt_activity_right:hover {
+.gantt_activity_right.resizable:hover {
   cursor:w-resize;
 }
 
-.gantt_activity_left:hover {
+.gantt_activity_left.resizable:hover {
   cursor:w-resize;
 }

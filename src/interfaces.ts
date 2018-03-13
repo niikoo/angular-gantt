@@ -17,6 +17,8 @@ export interface Task {
     status?: string;
 }
 
+export type TimeScale = Date[];
+
 export interface IGanttOptions {
     scale?: IScale;
     zooming?: string;
@@ -25,6 +27,7 @@ export interface IGanttOptions {
 export interface IScale {
     start?: Date;
     end?: Date;
+    auto?: boolean;
 }
 
 export interface IBarStyle {
@@ -38,3 +41,10 @@ export enum Zooming {
     hours,
     days
 }
+
+export interface IDimensions {
+    width: number;
+    height: number;
+}
+
+export type Cell = any;

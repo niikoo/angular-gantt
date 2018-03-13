@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
 import {IGanttOptions, GanttProject, Zooming} from '../interfaces';
 import {GanttService} from '../gantt.service';
+import {isNil, isEqual} from 'lodash';
 
 @Component({
   selector: 'gantt-component',
@@ -20,7 +21,7 @@ export class GanttComponent implements OnInit {
   };
   _options: IGanttOptions = {
         scale: {
-            start: new Date(2017, 0, 1),
+            start: new Date(2018, 0, 1),
             end: new Date(2019, 1, 1)
         },
         zooming: Zooming[Zooming.days]
@@ -28,17 +29,19 @@ export class GanttComponent implements OnInit {
 
   // TODO(dale): this may be causing an issue in the tree builder?
   @Input()
-  set project(project: any) {
-    if (project) {
-      this._project = project;
-    } else {
-      // this.setDefaultProject();
+  set project(project: GanttProject) {
+    if (isNil(project) || isEqual(this._project, project)) {
+      return;
     }
+    this._project = project;
+    this.projectUpdates.emit();
   }
 
   get project() {
     return this._project;
   }
+
+  projectUpdates = new EventEmitter<void>();
 
   /*@Input()
   set options(options: any) {
@@ -57,7 +60,17 @@ export class GanttComponent implements OnInit {
 
   private ganttContainerWidth: number;
 
-  constructor(private ganttService: GanttService) {
+  constructor(
+    private ganttService: GanttService,
+    private changeDetector: ChangeDetectorRef
+  ) {
+    window['ganttComponent'] = this;
+    this.projectUpdates.subscribe((s) => {
+      if (this.options.scale.auto) {
+        this.scaleToTasks();
+        this.changeDetector.detectChanges();
+      }
+    });
   }
 
   ngOnInit() {
@@ -68,7 +81,7 @@ export class GanttComponent implements OnInit {
     this.ganttContainerWidth = this.ganttService.calculateContainerWidth();
   }
 
-  setDefaultOptions() {
+  scaleToTasks() {
     const scale = this.ganttService.calculateGridScale(this._project.tasks);
 
     this._options = {

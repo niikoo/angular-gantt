@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Zooming} from '../interfaces';
+import {Zooming, TimeScale} from '../interfaces';
 import {GanttService} from '../gantt.service';
 import { isNil } from 'lodash';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'gantt-time-scale',
@@ -10,10 +11,10 @@ import { isNil } from 'lodash';
 })
 export class GanttTimeScaleComponent implements OnInit {
 
-  @Input() timeScale: any;
+  @Input() timeScale: TimeScale;
   @Input() dimensions: any;
-  @Input() zoom: any;
-  @Input() zoomLevel: any;
+  @Input() zoom: Observable<string>;
+  @Input() zoomLevel: string;
 
   constructor(public ganttService: GanttService) {
   }

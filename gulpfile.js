@@ -207,7 +207,7 @@ gulp.task('clean:compiled', function () {
 
 gulp.task('compile', function () {
   runSequence(
-    'clean:dist',
+    // 'clean:dist',
     'copy:source',
     'inline-resources',
     'ngc',
