@@ -39,4 +39,4 @@ export interface IDimensions {
     width: number;
     height: number;
 }
-export declare type Cell = any;
+export declare type Cell = Date;
