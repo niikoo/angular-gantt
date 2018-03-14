@@ -197,7 +197,7 @@ gulp.task('clean:tmp', function () {
  * 11. Delete /build folder
  */
 gulp.task('clean:build', function () {
-  // return deleteFolders([buildFolder]); // Crashes often on win10
+  return deleteFolders([buildFolder]); // Crashes often on win10
 });
 
 gulp.task('clean:compiled', function () {
