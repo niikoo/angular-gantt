@@ -25,13 +25,13 @@ export class GanttTimeScaleComponent implements OnInit {
     });
   }
 
-  private setTimescaleStyle() {
+  setTimescaleStyle() {
     return {
       'width': this.dimensions.width + 'px'
     };
   }
 
-  private setTimescaleLineStyle(borderTop: string) {
+  setTimescaleLineStyle(borderTop: string) {
     return {
       'height': this.ganttService.rowHeight + 'px',
       'line-height': this.ganttService.rowHeight + 'px',

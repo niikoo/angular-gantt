@@ -15,8 +15,8 @@ export class GanttActivityBarsComponent implements OnInit {
   @Input() zoom: EventEmitter<string>;
   @Input() zoomLevel: string;
 
-  private containerHeight = 0;
-  private containerWidth = 0;
+  public containerHeight = 0;
+  public containerWidth = 0;
   resizeable = '';
 
   constructor(public ganttService: GanttService) {

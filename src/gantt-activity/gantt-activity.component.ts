@@ -306,7 +306,7 @@ export class GanttActivityComponent implements OnInit, DoCheck {
     return '';
   }
 
-  private setGridScaleStyle() {
+  setGridScaleStyle() {
     let height = this.ganttService.rowHeight;
 
     if (this.zoomLevel === Zooming[Zooming.hours]) {
