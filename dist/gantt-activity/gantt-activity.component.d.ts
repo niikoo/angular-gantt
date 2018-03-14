@@ -51,7 +51,11 @@ export declare class GanttActivityComponent implements OnInit, DoCheck {
     getStatusIcon(status: string, percentComplete: number): string;
     /** Get the status icon color */
     getStatusIconColor(status: string, percentComplete: number): string;
-    private setGridScaleStyle();
+    setGridScaleStyle(): {
+        'height': string;
+        'line-height': string;
+        'width': string;
+    };
     private calculateContainerHeight();
     private calculateContainerWidth();
     private setSizes();

@@ -10,8 +10,15 @@ export declare class GanttTimeScaleComponent implements OnInit {
     zoomLevel: string;
     constructor(ganttService: GanttService);
     ngOnInit(): void;
-    private setTimescaleStyle();
-    private setTimescaleLineStyle(borderTop);
+    setTimescaleStyle(): {
+        'width': string;
+    };
+    setTimescaleLineStyle(borderTop: string): {
+        'height': string;
+        'line-height': string;
+        'position': string;
+        'border-top': string;
+    };
     private setTimescaleCellStyle();
     private isDayWeekend(date);
     private getHours();

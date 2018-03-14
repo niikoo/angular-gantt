@@ -1,6 +1,6 @@
 {
   "name": "ngx-gantt",
-  "version": "0.3.0",
+  "version": "0.3.4",
   "scripts": {
     "build": "npm cache clean -f && gulp build",
     "build-n-link": "npm cache clean -f && gulp build && link.cmd",

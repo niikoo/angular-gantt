@@ -8,8 +8,8 @@ export declare class GanttActivityBarsComponent implements OnInit {
     tasks: Task[];
     zoom: EventEmitter<string>;
     zoomLevel: string;
-    private containerHeight;
-    private containerWidth;
+    containerHeight: number;
+    containerWidth: number;
     resizeable: string;
     constructor(ganttService: GanttService);
     ngOnInit(): void;
