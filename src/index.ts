@@ -13,6 +13,7 @@ import { GanttService } from './gantt.service';
 export * from './gantt/gantt.component';
 export * from './group-by.pipe';
 export * from './gantt.service';
+export * from './interfaces';
 
 @NgModule({
   imports: [

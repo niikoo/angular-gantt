@@ -7,7 +7,7 @@ import 'rxjs/Observable';
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttConfig = /** @class */ (function () {
+var GanttConfig = (function () {
     function GanttConfig() {
         this.cellWidth = 76;
         this.rowHeight = 25;
@@ -29,7 +29,7 @@ var GanttConfig = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GroupByPipe = /** @class */ (function () {
+var GroupByPipe = (function () {
     function GroupByPipe() {
     }
     /**
@@ -67,7 +67,7 @@ var GroupByPipe = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttService = /** @class */ (function () {
+var GanttService = (function () {
     function GanttService() {
         this.rowHeight = 0;
         this.hourCellWidth = 60;
@@ -865,7 +865,7 @@ Zooming[Zooming.days] = "days";
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttActivityComponent = /** @class */ (function () {
+var GanttActivityComponent = (function () {
     function GanttActivityComponent(ganttService) {
         this.ganttService = ganttService;
         this._options = {};
@@ -1323,7 +1323,7 @@ var GanttActivityComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttComponent = /** @class */ (function () {
+var GanttComponent = (function () {
     function GanttComponent(ganttService, changeDetector) {
         var _this = this;
         this.ganttService = ganttService;
@@ -1481,7 +1481,7 @@ var GanttComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttHeaderComponent = /** @class */ (function () {
+var GanttHeaderComponent = (function () {
     function GanttHeaderComponent() {
         this.name = '';
         this.startDate = new Date();
@@ -1514,7 +1514,7 @@ var GanttHeaderComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttFooterComponent = /** @class */ (function () {
+var GanttFooterComponent = (function () {
     function GanttFooterComponent() {
     }
     /**
@@ -1544,7 +1544,7 @@ var GanttFooterComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttActivityBackgroundComponent = /** @class */ (function () {
+var GanttActivityBackgroundComponent = (function () {
     function GanttActivityBackgroundComponent(ganttService) {
         var _this = this;
         this.ganttService = ganttService;
@@ -1668,7 +1668,7 @@ var GanttActivityBackgroundComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttActivityBarsComponent = /** @class */ (function () {
+var GanttActivityBarsComponent = (function () {
     function GanttActivityBarsComponent(ganttService) {
         this.ganttService = ganttService;
         this.containerHeight = 0;
@@ -1877,7 +1877,7 @@ var GanttActivityBarsComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttTimeScaleComponent = /** @class */ (function () {
+var GanttTimeScaleComponent = (function () {
     function GanttTimeScaleComponent(ganttService) {
         this.ganttService = ganttService;
     }
@@ -1983,7 +1983,7 @@ var GanttTimeScaleComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var GanttModule = /** @class */ (function () {
+var GanttModule = (function () {
     function GanttModule() {
     }
     /**
@@ -2031,4 +2031,4 @@ var GanttModule = /** @class */ (function () {
     return GanttModule;
 }());
 
-export { GanttModule, GanttComponent, GroupByPipe, GanttService };
+export { GanttModule, GanttComponent, GroupByPipe, GanttService, Zooming };

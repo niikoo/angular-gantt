@@ -143,7 +143,7 @@ gulp.task('rollup:umd', function () {
        * (required for bundles with exports)'
        * @see https://rollupjs.org/guide/en#core-functionality
        **/
-      moduleName: 'angular-gantt',
+      moduleName: 'ngx-gantt',
 
       /**
        * @see https://rollupjs.org/guide/en#core-functionality
@@ -156,7 +156,7 @@ gulp.task('rollup:umd', function () {
 
 
     }))
-    .pipe(rename('angular-gantt.umd.js'))
+    .pipe(rename('ngx-gantt.umd.js'))
     .pipe(gulp.dest(distFolder));
 });
 
@@ -207,7 +207,7 @@ gulp.task('clean:compiled', function () {
 
 gulp.task('compile', function () {
   runSequence(
-    // 'clean:dist',
+    'clean:dist',
     'copy:source',
     'inline-resources',
     'ngc',

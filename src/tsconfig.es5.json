@@ -24,8 +24,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "angular-gantt.js",
-    "flatModuleId": "angular-gantt"
+    "flatModuleOutFile": "ngx-gantt.js",
+    "flatModuleId": "ngx-gantt"
   },
   "files": [
     "./index.ts"
